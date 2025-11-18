@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -359,8 +360,10 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- Footer/////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+ <footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
@@ -404,15 +407,43 @@
             <li><a href="https://www.instagram.com/ridbharat"><i class="fab fa-instagram"></i> Instagram</a></li>
             <li><a href="mailto:ridorg.in@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
           </ul>
-        </div>
-        
-        <div class="footer-newsletter">
-          <h3>Newsletter</h3>
-          <p>Subscribe to our newsletter to get updates on latest research and innovations.</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
-          </form>
+ 
+          
+<div class="counter_containar">
+             <div class="rating-counter-container">
+              <i class="fas fa-star counter-star"></i>
+              <div class="rating-counter" id="ratingCount">0</div>
+              <div class="rating-label">Total Ratings</div>
+            </div>
+             </div>
+
+
+          <!-- UPDATED: Rating System with Star in Counter -->
+          <div class="rating-system-wrapper">
+            <div class="footer-rating-container">
+              <div class="star-rating-section">
+                <h4>Rate Our Website</h4>
+                <div class="star-container" id="starContainer">
+                  <span class="star" data-rating="1">☆</span>
+                  <span class="star" data-rating="2">☆</span>
+                  <span class="star" data-rating="3">☆</span>
+                  <span class="star" data-rating="4">☆</span>
+                  <span class="star" data-rating="5">☆</span>
+                </div>
+                
+                <div class="rating-actions">
+                  <button class="submit-rating" id="submitRating" disabled>
+                    <i class="fas fa-star"></i> Submit Rating
+                  </button>
+                  <div class="thank-you-message" id="thankYouMessage">
+                    Thank you for your feedback!
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+         
+          </div>
         </div>
       </div>
       
@@ -433,6 +464,8 @@
     </div>
   </footer>
 
+
+ 
   <script src="js/main.js"></script>
 </body>
 </html>

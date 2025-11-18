@@ -224,3 +224,80 @@
             console.log('Dropdown activated manually');
         }
     }
+
+// ....................................................................................................................................................................///
+   // Star Rating System
+    let currentRating = 0;
+    let totalRatings = 0;
+    
+    // Get DOM elements
+    const stars = document.querySelectorAll('.star');
+    const submitButton = document.getElementById('submitRating');
+    const ratingCount = document.getElementById('ratingCount');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+    
+    // Add event listeners to stars
+    stars.forEach(star => {
+      star.addEventListener('click', function() {
+        const rating = parseInt(this.getAttribute('data-rating'));
+        setRating(rating);
+      });
+      
+      star.addEventListener('mouseover', function() {
+        const rating = parseInt(this.getAttribute('data-rating'));
+        highlightStars(rating);
+      });
+    });
+    
+    // Reset stars when mouse leaves the container
+    document.getElementById('starContainer').addEventListener('mouseleave', function() {
+      highlightStars(currentRating);
+    });
+    
+    // Set rating function
+    function setRating(rating) {
+      currentRating = rating;
+      highlightStars(rating);
+      submitButton.disabled = false;
+    }
+    
+    // Highlight stars based on rating
+    function highlightStars(rating) {
+      stars.forEach(star => {
+        const starRating = parseInt(star.getAttribute('data-rating'));
+        if (starRating <= rating) {
+          star.classList.add('active');
+          star.textContent = '★';
+        } else {
+          star.classList.remove('active');
+          star.textContent = '☆';
+        }
+      });
+    }
+    
+    // Submit rating function
+    submitButton.addEventListener('click', function() {
+      if (currentRating > 0) {
+        totalRatings++;
+        ratingCount.textContent = totalRatings;
+        
+        // Show thank you message
+        thankYouMessage.style.display = 'block';
+        
+        // Reset after 3 seconds
+        setTimeout(() => {
+          thankYouMessage.style.display = 'none';
+          resetRating();
+        }, 3000);
+        
+        // In a real application, you would send this data to a server
+        console.log(`Rating submitted: ${currentRating} stars`);
+      }
+    });
+    
+    // Reset rating function
+    function resetRating() {
+      currentRating = 0;
+      highlightStars(0);
+      submitButton.disabled = true;
+    }

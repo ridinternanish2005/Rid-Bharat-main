@@ -1,68 +1,123 @@
- body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-   .title {
-    font-size: 25px;
-    font-weight: bold;
-    color: #333;
-    margin-top: 0; 
-    padding-right: 680px;
-    }
-    .con {
-   display: flex;
-   justify-content: center;
-   align-items: flex-start;
-   width: 100%;
-   max-width: 1200px;
-   min-height: 60vh;
-   padding: 20px;
-   margin: 0 auto; /* centers horizontally */
-   }
+  body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .policy{
+          margin-top: -40px;
+          text-align: center;
 
-  .divp {
-  width: 100%;
-  max-width: 900px;
-  /* background-color: white; */
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  }
-.privacy-box {
-  border: 3px solid #41637871;
-  background-color: #e6f4ffdf;
-  padding: 24px;
-  line-height: 1.7;
-  font-size: 16px;
-  color: #111111e2;
-  font-weight: bold;
-  text-align: justify; /* Aligns the text neatly */
-  /* white-space: pre-line; Maintains formatting */
-  }
-    ol li {
-      margin-bottom: 12px;
-    }
 
-    @media (max-width: 768px) {
-      .title {
-        font-size: 22px;
-        text-align: center;
-      }
+        }
 
-      .privacy-box {
-        padding: 18px;
-        font-size: 14px;
-      }
-    }
+        .page-title {
+            text-align: center;
+            color: #1d4e89;
+            margin: 10px 0;
+            font-size: 32px;
+            font-weight: 700;
+            /* margin-top: -10px; */
+            
+        }
 
-    @media (max-width: 480px) {
-      .title {
-        font-size: 20px;
-      }
+        .container {
+            min-height: 75vh;
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 3px solid #23516e71;
+            padding: 40px;
+            box-sizing: border-box;
+            background-color: #e6f4ffdf;
+            overflow-y: auto;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 10vh;
+            margin-bottom: 50px;
+        }
 
-      .privacy-box {
-        padding: 14px;
-        font-size: 13px;
-      }
-    }
+        /* Content Styling */
+        .content {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.9;
+            text-align: justify;
+            position: relative;
+        }
+
+        .content p {
+            margin-bottom: 12px;
+        }
+
+        .content strong {
+            display: block;
+            margin-top: 15px;
+            color: #1d4e89;
+            font-weight: 500;
+        }
+
+        /* Ordered List */
+        ol {
+            padding-left: 20px;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                margin: 30px 20px;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px 15px;
+                padding: 25px;
+            }
+
+            .page-title {
+                font-size: 28px;
+                margin: 20px 0;
+            }
+
+            .content {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 15px 10px;
+                padding: 20px;
+                margin-top: 10px;
+            }
+
+            .page-title {
+                font-size: 24px;
+                margin: 15px 0;
+            }
+
+            .content {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                text-align: left;
+            }
+
+            ol {
+                padding-left: 18px;
+            }
+
+            ol li {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+        }
